@@ -26,7 +26,7 @@ todo-project
 
 ```
 
-GitHub
+GitHub Checkout
    ↓
 Jenkins
    ↓
@@ -36,10 +36,14 @@ Push Docker Image
    ↓
 Update deployment.yaml
    ↓
-Git Push
+Git Commit & Push
    ↓
-Ansible Playbook
+ansible-playbook deploy.yml        #### Kubernetes (RBAC + Deployment + Service)
    ↓
-Kubernetes (RBAC + Deployment + Service)
-
+RBAC Applied
+   ↓
+Deployment Applied
+   ↓
+Service Applied
+  
 ```
