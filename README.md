@@ -6,41 +6,34 @@ todo-project
 ├── Jenkinsfile
 ├── Dockerfile
 │
-├── Kubernetes
-│   ├── deployment.yaml
-│   └── service.yaml
-│
-├── rbac
-│   ├── namespace.yaml
-│   ├── serviceaccount.yaml
-│   ├── role.yaml
-│   └── rolebinding.yaml
-│
-└── argocd
-    └── application.yaml
-```
-    
+└── Kubernetes
+    ├── deployment.yaml
+    └── service.yaml
+ ```  
 
 ## Project Flow
 
 ```
 
-Developer Push
-      ↓
 GitHub
-      ↓
+  ↓
 Jenkins
-      ↓
+  ↓
 Build Docker Image
-      ↓
+  ↓
 Push Docker Image
-      ↓
-Update deployment.yaml (or Helm values.yaml)
-      ↓
-Git Commit & Push
-      ↓
-ArgoCD detects Git change
-      ↓
-ArgoCD deploys to Kubernetes
+  ↓
+Update deployment.yaml
+  ↓
+kubectl apply
+  ↓
+Kubernetes
 
 ```
+
+
+## Jenkins Credentials Needed
+docker-hub-creds (Username/Password)
+kubeconfig (Secret File)
+
+#This is the simplest production-style CI/CD project without Helm, RBAC, Ansible, or ArgoCD. Jenkins handles the entire deployment directly using kubectl apply.
