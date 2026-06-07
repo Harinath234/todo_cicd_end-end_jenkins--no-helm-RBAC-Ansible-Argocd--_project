@@ -15,7 +15,9 @@ todo-project
 │   ├── serviceaccount.yaml
 │   ├── role.yaml
 │   └── rolebinding.yaml
-
+│
+└── argocd
+    └── application.yaml
 ```
     
 
